@@ -1,0 +1,28 @@
+/* =========================
+       Mobile-first layout vars
+    ========================= */
+ 
+    * {box-sizing: border-box;/* border: 2px solid rebeccapurple; */}
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+
+
+
+.lessonContainer {
+    width: 100%;
+    background-color: #083457;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 22px 0px;
+}
+
+.lessonSection {
+    width: 86%;
+}

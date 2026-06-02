@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CodeMirror Live Preview (Iframe)</title>
+
+  <!-- CodeMirror 5 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/htmlmixed/htmlmixed.min.js"></script>
+
+  <style>
+    #editor { border: 1px solid #ccc; height: 200px; }
+    #outputFrame {
+      border: 1px solid #ccc;
+      margin-top: 10px;
+      width: 100%;
+      height: 250px;
+      background: #fff;
+    }
+  </style>
+</head>
+<body>
+  <textarea id="editor"></textarea>
+  <button id="downloadBtn">Download JSON</button>
+
+  <h3>Live Output:</h3>
+  <iframe id="outputFrame"></iframe>
+
+  <script>
+    var editor = CodeMirror.fromTextArea(document.getElementById("editor"), {
+      lineNumbers: true,
+      mode: "htmlmixed"
+    });
+
+    var frame = document.getElementById("outputFrame");
+    var recording = [];
+    var startTime = Date.now();
+
+    editor.on("change", function(instance, changeObj) {
+      const code = instance.getValue();
+      const doc = frame.contentDocument || frame.contentWindow.document;
+      doc.open();
+      doc.write(code);
+      doc.close();
+      recording.push({ time: Date.now() - startTime, change: changeObj });
+    });
+
+    document.getElementById("downloadBtn").onclick = function() {
+      var blob = new Blob([JSON.stringify(recording, null, 2)], {type: "application/json"});
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = "recording.json";
+      a.click();
+      URL.revokeObjectURL(url);
+    };
+  </script>
+</body>
+</html>
+<!-- https://toposmagazine.com/wp-content/uploads/2023/01/christopher-czermak-cRBCdpGtPf4-unsplash-scaled.jpg -->

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mobile – Multi Mini Editors (Video + Timeline)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Your styles -->
+  <link rel="stylesheet" href="../index5.css" />
+  <link rel="stylesheet" href="../mobile.css" />
+  <link rel="stylesheet" href="../lesson.css" />
+ 
+</head>
+<body class="state-compact">
+
+  <main class="mainbody" role="main">
+    <div class="body_container_cover">
+      <div class="body_container">
+
+        <!-- Toggle button (menu.js controls this) -->
+        <button id="menudisplay" aria-label="Toggle menu">☰</button>
+
+        <!-- Left menu (unchanged) -->
+        <nav class="menuBarstdy" aria-label="Study Menu">
+          <div class="menuHeader">
+            <div class="menuTitle">Study Menu</div>
+          </div>
+
+          <div class="menustudycategorycontainer open">
+            <button class="menustudycategory" aria-expanded="true">
+              <span class="menustudytxtheader">Intro</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="menustudy" role="region" aria-label="Intro">
+              <a class="menustudytxt" href="../lesson1/index.html">HTML?</a>
+              <a class="menustudytxt" href="../lesson2/index.html">Design</a>
+              <a class="menustudytxt" href="../lesson3Txt/index.html">Text</a>
+              <a class="menustudytxt" href="../lesson4img/index.html">Images</a>
+              <a class="menustudytxt" href="../lesson5div/index.html">Div</a>
+              <a class="menustudytxt" href="../lesson6buttonLink/index.html">Link</a>
+            </div>
+          </div>
+
+          <div class="menustudycategorycontainer open">
+            <button class="menustudycategory" aria-expanded="true">
+              <span class="menustudytxtheader">Learning</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="menustudy" role="region" aria-label="Learning">
+              <a class="menustudytxt" href="../lesson3txt/index.html">Text</a>
+              <a class="menustudytxt" href="../lesson4img/index.html">Images</a>
+              <a class="menustudytxt" href="../lesson5divs/index.html">divs</a>
+              <a class="menustudytxt" href="../lesson6buttonlinks/index.html">Links</a>
+            </div>
+          </div>
+
+          <div class="menustudycategorycontainer">
+            <button class="menustudycategory" aria-expanded="false">
+              <span class="menustudytxtheader">How to learn</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="menustudy" role="region" aria-label="How to learn">
+              <a class="menustudytxt" href="#">Roadmap</a>
+              <a class="menustudytxt" href="#">Practice</a>
+              <a class="menustudytxt" href="#">Projects</a>
+              <a class="menustudytxt" href="#">Resources</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- ===== Content / Lessons (unchanged) ===== -->
+        <div class="lessonContainer">
+          <div class="lessonSection">
+             <h1>What is HTML</h1>
+       <p>HTML is the code you write that allows you to view pages that you view in the website, It is the code that the browser reads</p>
+       <p>HTML is structuring the page, like what would it contain (Text, Images, videos, menu, footer, header, paragraph)</p>
+       <p>CSS is the language used to deign that page, JS is to make it ineractive, for now we will focus on HTML</p>
+       <p>I'll show what it can do quickly in few minutes</p>
+          </div>
+        </div>
+
+        <div class="lessonContainer">
+          <div class="lessonSection">
+            <h1>Quick setup</h1>
+       <p>Click on play to play the program below, pause to stop, play again to continue</p>
+       <p>You should see the output</p>
+       <p>You should be able to edit, write and change my code !!</p>
+       <p>Quickly try and edit</p>
+          </div>
+        </div>
+
+
+
+        <!-- ================== MINI EDITORS ================== -->
+
+        <!-- ========== MINI EDITOR #1 — VIDEO ==========
+             AUTO_MAP: ["recording1.json", 1, "video1.mp4", "video"]
+        -->
+        <div class="body_container_cover_section_cover menu_editor">
+          <h2>Mini Editor A (Video)</h2>
+
+          <div class="editor_controls">
+            <button class="btnLoad">📂 Load JSON…</button>
+            <input class="fileJson" type="file" accept=".json,application/json" style="display:none">
+            <button class="btnToggle">▶ Play</button>
+            <button class="btnReset">↺ Reset</button>
+
+            <div class="seekWrap" style="display:flex;gap:8px;align-items:center;margin-left:auto;min-width:40%">
+              <input class="seek" type="range" min="0" max="0" step="50" value="0" style="flex:1">
+              <span class="timeLabel" style="font-size:.9rem;opacity:.85;white-space:nowrap">00:00 / 00:00</span>
+            </div>
+          </div>
+
+          <div style="font-size:.9rem; color:#bbb; margin-bottom:6px;">src · play/pause · seek · edit · output</div>
+
+          <!-- Video slot used when mediaType === "video" -->
+          <video class="editorVideo" playsinline controls style="width:100%;max-height:220px;background:#000"></video>
+
+          <!-- Readonly while playing -->
+          <div class="roWrap">
+            <label>Read-only (timeline)</label>
+            <textarea class="txtReadonly" readonly></textarea>
+          </div>
+
+          <!-- Editable while paused -->
+          <div class="editWrap">
+            <label>Editable (your scratch)</label>
+            <textarea class="txtEdit editable"></textarea>
+          </div>
+
+          <div class="editor_output">
+            <iframe class="outputFrame" sandbox="allow-scripts"></iframe>
+          </div>
+
+          <div class="status" style="margin-top:6px;font-size:.9rem;opacity:.85">Waiting for recording…</div>
+        </div>
+
+        <!-- ========== MINI EDITOR #2 — AUDIO ==========
+             AUTO_MAP: ["recording2.json", 2, "audio.mp3", "audio"]
+             (No <audio> tag needed; app.js will create .editorAudio)
+        -->
+
+
+         <div class="lessonContainer">
+
+       <div class="lessonSection">
+       <h1>Structure</h1>
+       <p>HTML and websites haves the same structure</p>
+       <p>There is the head written as <br> < head > <br>  </p>
+       
+      <p>Everything we will write will be inside the body tag <br> < body > </p>
+       </div>
+  </div>
+
+        <div class="body_container_cover_section_cover menu_editor">
+          <h2>Mini Editor B (Audio)</h2>
+
+          <div class="editor_controls">
+            <button class="btnLoad">📂 Load JSON…</button>
+            <input class="fileJson" type="file" accept=".json,application/json" style="display:none">
+            <button class="btnToggle">▶ Play</button>
+            <button class="btnReset">↺ Reset</button>
+
+            <div class="seekWrap" style="display:flex;gap:8px;align-items:center;margin-left:auto;min-width:40%">
+              <input class="seek" type="range" min="0" max="0" step="50" value="0" style="flex:1">
+              <span class="timeLabel" style="font-size:.9rem;opacity:.85;white-space:nowrap">00:00 / 00:00</span>
+            </div>
+          </div>
+
+          <div style="font-size:.9rem; color:#bbb; margin-bottom:6px;">src · play/pause · seek · edit · output</div>
+
+          <!-- No media element here; app.js will inject <audio.editorAudio> -->
+
+          <!-- Readonly while playing -->
+          <div class="roWrap">
+            <label>Read-only (timeline)</label>
+            <textarea class="txtReadonly" readonly></textarea>
+          </div>
+
+          <!-- Editable while paused -->
+          <div class="editWrap">
+            <label>Editable (your scratch)</label>
+            <textarea class="txtEdit editable"></textarea>
+          </div>
+
+          <div class="editor_output">
+            <iframe class="outputFrame" sandbox="allow-scripts"></iframe>
+          </div>
+
+          <div class="status" style="margin-top:6px;font-size:.9rem;opacity:.85">Waiting for recording…</div>
+        </div>
+
+        <!-- ========== MINI EDITOR #3 — YOUTUBE ==========
+             AUTO_MAP: ["recording3.json", 3, "https://www.youtube.com/watch?v=vY2xUc4TVmY", "youtube"]
+             (No iframe needed; app.js creates a .editorYouTube holder)
+        -->
+
+        
+        <div class="body_container_cover_section_cover menu_editor">
+          <h2>Mini Editor C (YouTube)</h2>
+
+          <div class="editor_controls">
+            <button class="btnLoad">📂 Load JSON…</button>
+            <input class="fileJson" type="file" accept=".json,application/json" style="display:none">
+            <button class="btnToggle">▶ Play</button>
+            <button class="btnReset">↺ Reset</button>
+
+            <div class="seekWrap" style="display:flex;gap:8px;align-items:center;margin-left:auto;min-width:40%">
+              <input class="seek" type="range" min="0" max="0" step="50" value="0" style="flex:1">
+              <span class="timeLabel" style="font-size:.9rem;opacity:.85;white-space:nowrap">00:00 / 00:00</span>
+            </div>
+          </div>
+
+          <div style="font-size:.9rem; color:#bbb; margin-bottom:6px;">src · play/pause · seek · edit · output</div>
+
+          <!-- No media element here; app.js will inject a .editorYouTube player -->
+
+          <!-- Readonly while playing -->
+          <div class="roWrap">
+            <label>Read-only (timeline)</label>
+            <textarea class="txtReadonly" readonly></textarea>
+          </div>
+
+          <!-- Editable while paused -->
+          <div class="editWrap">
+            <label>Editable (your scratch)</label>
+            <textarea class="txtEdit editable"></textarea>
+          </div>
+
+          <div class="editor_output">
+            <iframe class="outputFrame" sandbox="allow-scripts"></iframe>
+          </div>
+
+          <div class="status" style="margin-top:6px;font-size:.9rem;opacity:.85">Waiting for recording…</div>
+        </div>
+
+        <!-- ================== /MINI EDITORS ================== -->
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts (defer so DOM is ready) -->
+  <script src="app.js" defer></script>
+  <script src="../menu.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,231 @@
+/* =========================
+       Mobile-first layout vars
+    ========================= */
+    :root{
+      /* 18% content + 1% + 1% padding = 20% total for menu */
+      --menu-content: 18vw;
+      --menu-pad: 1vw;
+      --menu-w: calc(var(--menu-content) + 2*var(--menu-pad));
+      --speed: 240ms;
+
+      --bg: #0b1222;
+      --panel: #0f172a;
+      --panel2:#0a1f33;
+      --line: #e5e7eb;
+      --text: #e5e7eb;
+      --ink: #0f172a;
+      --accent: #2563eb;
+
+      --yellow: #FFC107; /* your menu color */
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    /* ============ Toggle button ============ */
+    #menudisplay{
+      position: fixed;
+      top: 10px;
+      right: 10px; /* keep on right per your last CSS; set left:10px if you prefer */
+      z-index: 1002;
+      width: 40px; height: 40px;
+      border: 1px solid #ffffffc9;
+      background: #111827cc;
+      color: #fff;
+      border-radius: 10px;
+      display: grid; place-items: center;
+      backdrop-filter: blur(4px) saturate(120%);
+    }
+
+    /* ============ Left menu ============ */
+    .menuBarstdy{
+      position: fixed;
+      inset: 0 auto 0 0; /* top:0; right:auto; bottom:0; left:0 */
+      width: var(--menu-w);
+      background: var(--yellow);
+      color: #0f172a;
+      overflow: hidden auto;
+      -webkit-overflow-scrolling: touch;
+      z-index: 1001;
+      transform: translateX(0);
+      transition: transform var(--speed), width var(--speed);
+      border-right: 1px solid rgba(0,0,0,0.1);
+      box-shadow: 0 0 12px rgba(0,0,0,.18);
+    }
+
+    .menuHeader{
+      padding: 8px 8px 10px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+    .menuTitle{
+      font-weight: 700;
+      font-size: 0.98rem;
+      color: #0f172a;
+    }
+
+    .menustudycategorycontainer{
+      border-bottom: 1px dashed rgba(0,0,0,0.15);
+      padding: 6px 6px 10px;
+      width: 100%;
+    }
+    .menustudycategory{
+      width: 100%;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 8px;
+      padding: 10px 8px;
+      border: 0; background: transparent; color: #0f172a;
+      border-radius: 10px; cursor: pointer;
+    }
+    .menustudycategory:hover{ background: rgba(0,0,0,0.06); }
+    .menustudytxtheader{ font-weight: 600; font-size: 0.95rem; }
+    .chev{
+      width: 18px; height: 18px; opacity: .85;
+      transform: rotate(-90deg);
+      transition: transform var(--speed);
+    }
+    .menustudycategorycontainer.open .chev{ transform: rotate(0deg); }
+
+    .menustudy{
+      max-height: 0; overflow: hidden; transition: max-height var(--speed);
+    }
+    .menustudycategorycontainer.open .menustudy{ max-height: 420px; }
+
+    .menustudytxt{
+      display: block; padding: 12px 10px; margin: 6px 0;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #0f172a;
+      background: #fff7da;
+      border: 1px solid rgba(15,23,42,.12);
+      font-size: 13.7px;
+    }
+    .menustudytxt:hover{
+      background: #ffe58f;
+      border-color: rgba(15,23,42,.25);
+    }
+
+    /* ============ Main body ============ */
+    .mainbody{
+      min-height: 100%;
+      margin-left: var(--menu-w);
+      padding: 56px 10px 16px;
+      transition: margin-left var(--speed);
+      background:
+        linear-gradient(180deg, #0b1222, #0b132a 30%, #0e1733 100%);
+    }
+
+    /* 3 layout states on <body> */
+    body.state-hidden .menuBarstdy{ transform: translateX(-100%); }
+    body.state-hidden .mainbody{ margin-left: 0; }
+
+    body.state-compact .menuBarstdy{ width: var(--menu-w); transform: translateX(0); }
+    body.state-compact .mainbody{ margin-left: var(--menu-w); display: block; }
+
+    body.state-full .menuBarstdy{ width: 100vw; transform: translateX(0); }
+    body.state-full .mainbody{ display: none; }
+
+    /* ============ Your content wrappers ============ */
+    .body_container_cover {
+      width: 100%;
+    }
+    .body_container {
+      width: 100%;
+      max-width: 720px; /* readability */
+      margin: 0 auto;
+    }
+    .body_container_cover_section_cover {
+      border-radius: 10px;
+      background-color: #2b2b2b;
+      border: 2px solid white;
+      margin-bottom: 55px;
+      padding: 14px;
+    }
+    .section_container h1 {
+      margin: 0 0 8px;
+    }
+    .section_container p {
+      line-height: 1.6;
+      margin: 0 0 8px;
+    }
+
+    /* ============ Minimal two-textarea editor ============ */
+    .menu_editor{
+      background: #1e1e1e;
+      border-color: #333;
+      color: #fff;
+      height: max-content;
+    }
+    .menu_editor h2{
+      margin: 0 0 10px; font-size: 1.1rem; color: #ffd54f;
+    }
+    .editor_controls{ margin-bottom: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
+    .editor_controls button{
+      padding: 6px 10px; border: 1px solid #666; background: #333; color:#fff; border-radius: 6px; cursor: pointer;
+    }
+    .editor_controls button:hover{ background: #444; }
+    .menu_editor label{
+      display:block; font-size:.9rem; margin:10px 0 4px; color:#ccc;
+    }
+    .menu_editor textarea{
+      width: 100%;
+      min-height: 58vh;
+      border-radius: 6px;
+      border: 1px solid #555;
+      background: #0f172a;
+      color: #eee;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 14px;
+      padding: 8px;
+      resize: vertical;
+    }
+    .menu_editor textarea[readonly]{
+      background: #121a2c; /* top (read-only) */
+    }
+    .menu_editor textarea.editable{
+      background: #0a1f33; /* bottom (editable) */
+    }
+    .editor_output{ margin-top: 12px; }
+    .editor_output iframe{
+      width: 100%;
+      min-height: 100%;
+      border: 1px solid #555;
+      border-radius: 6px;
+      background: #fff;
+      height: 33vh;
+    }
+
+    /* ============ Wider phones and up ============ */
+    @media (min-width: 640px){
+      :root{
+        --menu-content: 200px;
+        --menu-pad: 8px;
+        --menu-w: calc(var(--menu-content) + 2*var(--menu-pad));
+      }
+      #menudisplay{ top: 12px; left: 12px; right: auto; }
+      .mainbody{ padding: 62px 16px 18px; }
+    }
+
+    /* before */
+body.state-full .menuBarstdy{ width: 100vw; transform: translateX(0); }
+body.state-full .mainbody{ display: none; }
+
+/* after */
+body.state-full .menuBarstdy{
+  width: 100vw;
+  transform: translateX(0);
+  position: fixed;      /* already fixed in your styles; keep it overlay */
+  left: 0; top: 0; right: 0; bottom: 0;
+  z-index: 1001;        /* stays under the ☰ button (which is 1002) */
+}
+body.state-full .mainbody{
+  display: block;       /* keep it visible and alive */
+  margin-left: 0;       /* don’t push layout while overlay is open */
+}
+/* Optional: stop background scroll while overlay is open */
+body.state-full{ overflow: hidden; }

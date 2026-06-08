@@ -2,7 +2,7 @@
        Mobile-first layout vars
     ========================= */
  
-    * {box-sizing: border-box;border: 2px solid rebeccapurple;}
+    * {box-sizing: border-box;/* border: 2px solid rebeccapurple; */}
     html, body {
       height: 100%;
       margin: 0;

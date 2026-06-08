@@ -7,9 +7,9 @@
 // mediaType ∈ { "video", "audio", "youtube" } — mediaUrl optional for timeline-only.
 const AUTO_MAP = [
   // Example:
-  ["recording3.json", 3, "https://www.youtube.com/watch?v=MDLn5-zSQQI", "youtube"],
+  ["recording.json", 1, "https://www.youtube.com/watch?v=MDLn5-zSQQI", "youtube"],
    ["officiall1p2.json", 2, "officiall1p2.m4a", "audio"],
-   ["officiall1p1.json", 1, "officialL1P1.m4a", "audio"],
+   ["officiall1p1.json", 3, "officialL1P1.m4a", "audio"],
    
 ];
 

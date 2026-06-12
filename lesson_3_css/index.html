@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Mobile – Multi Mini Editors (Video + Timeline)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Your styles -->
+  <link rel="stylesheet" href="../index5.css" />
+  <link rel="stylesheet" href="../mobile.css" />
+  <link rel="stylesheet" href="../lesson.css" />
+ 
+</head>
+<body class="state-compact">
+
+  <main class="mainbody" role="main">
+    <div class="body_container_cover">
+      <div class="body_container">
+
+        <!-- Toggle button (menu.js controls this) -->
+        <button id="menudisplay" aria-label="Toggle menu">☰</button>
+
+        <!-- Left menu (unchanged) -->
+        <nav class="menuBarstdy" aria-label="Study Menu">
+          <div class="menuHeader">
+            <div class="menuTitle">Study Menu</div>
+          </div>
+
+          <div class="menustudycategorycontainer open">
+            <button class="menustudycategory" aria-expanded="true">
+              <span class="menustudytxtheader">Intro</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="menustudy" role="region" aria-label="Intro">
+              <a class="menustudytxt" href="../lesson1/index.html">Intro</a>
+              <a class="menustudytxt" href="../lesson2/index.html">Design</a>
+              <a class="menustudytxt" href="../lesson3Txt/index.html">Text</a>
+              <a class="menustudytxt" href="../lesson4img/index.html">Images</a>
+              <a class="menustudytxt" href="../lesson5div/index.html">Div</a>
+              <a class="menustudytxt" href="../lesson6buttonLink/index.html">Link</a>
+            </div>
+          </div>
+
+          <div class="menustudycategorycontainer open">
+            <button class="menustudycategory" aria-expanded="true">
+              <span class="menustudytxtheader">Learning</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="menustudy" role="region" aria-label="Learning">
+              <a class="menustudytxt" href="../lesson3txt/index.html">Text</a>
+              <a class="menustudytxt" href="../lesson4img/index.html">Images</a>
+              <a class="menustudytxt" href="../lesson5divs/index.html">divs</a>
+              <a class="menustudytxt" href="../lesson6buttonlinks/index.html">Links</a>
+            </div>
+          </div>
+
+          <div class="menustudycategorycontainer">
+            <button class="menustudycategory" aria-expanded="false">
+              <span class="menustudytxtheader">How to learn</span>
+              <svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+            </button>
+            <div class="menustudy" role="region" aria-label="How to learn">
+              <a class="menustudytxt" href="#">Roadmap</a>
+              <a class="menustudytxt" href="#">Practice</a>
+              <a class="menustudytxt" href="#">Projects</a>
+              <a class="menustudytxt" href="#">Resources</a>
+            </div>
+          </div>
+        </nav>
+
+        <!-- ===== Content / Lessons (unchanged) ===== -->
+        <div class="lessonContainer">
+          <div class="lessonSection">
+             <h1>What is HTML, CSS, and JS</h1>
+       <p>
+
+        HTML stands for HyperText Markup Language, it is the structure or blueprint of the website, you can add images, text, videos and shapes.
+        CSS stands for Cascading Style Sheets, it's how you design the structure of shapes, text, images and videos of the structure of HTML.
+        JS stands for Javascript, it is the language the true core programming language of the of website developments you will be doing.
+        
+       </p>
+          </div>
+        </div>
+
+        <div class="lessonContainer">
+
+  <div class="lessonSection">
+    <h1>HTML</h1>
+
+    <p>
+      You just have to learn these codes to become a web developer, we will learn them now generally and then
+      we will break them down each one in the next lessons.
+    </p>
+
+    <p><code>&lt;p&gt;&lt;/p&gt;</code></p>
+    <p><code>&lt;div&gt;&lt;/div&gt;</code></p>
+    <p><code>&lt;h1&gt;&lt;/h1&gt;</code></p>
+    <p><code>&lt;a href="#"&gt;Link&lt;/a&gt;</code></p>
+    <p><code>&lt;img src="image.jpg"&gt;</code></p>
+    <p><code>&lt;video src="video.mp4" controls&gt;&lt;/video&gt;</code></p>
+    <p><code>&lt;audio src="audio.mp3" controls&gt;&lt;/audio&gt;</code></p>
+
+    <p>
+      The first three elements that you write
+      <code>&lt;div&gt;</code>,
+      <code>&lt;h1&gt;</code>,
+      <code>&lt;a&gt;</code>,
+      can contain content inside them.
+    </p>
+
+    <p>
+      If you observe closely, you have to close these elements like:
+      <code>&lt;element&gt;&lt;/element&gt;</code>
+    </p>
+
+    <p>
+      The <code>&lt;img&gt;</code> element is a self-closing (void) element.
+      
+    </p>
+  </div>
+
+  <div class="lessonSection">
+    <h1>CSS</h1>
+
+    <p>
+      CSS has more code, but it's easier to understand because it's readable.
+      It is divided into properties and values.
+    </p>
+
+    <p>I'll show you some properties.</p>
+
+    <div class="inner_Section">
+      <p class="css_code">background-image: url('image.jpg');</p>
+
+      <p>
+        This will give a background image for an element, which can be a div,
+        section, header, or many other HTML elements.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">background-image: linear-gradient(45deg, red, blue);</p>
+
+      <p>
+        This will create a background with colours blended together in a gradient.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">font-family: sans-serif;</p>
+
+      <p>
+        This changes the font used by the text. It doesn't have to be
+        sans-serif; there are thousands of fonts available.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">font-size: 20px;</p>
+
+      <p>
+        The font-size property allows you to increase or decrease the size of
+        text using units such as pixels (px).
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">color: red;</p>
+
+      <p>
+        The color property allows you to change the colour of text, for example
+        text inside a <code>&lt;p&gt;</code> tag.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">margin: 4px 8px 16px 20px;</p>
+
+      <p>
+        The margin property allows you to add space around an element.
+      </p>
+
+      <p>
+        The values represent:
+        Top = 4px,
+        Right = 8px,
+        Bottom = 16px,
+        Left = 20px.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">padding: 4px 8px 16px 20px;</p>
+
+      <p>
+        The padding property allows you to add space inside an element.
+      </p>
+
+      <p>
+        The values represent:
+        Top = 4px,
+        Right = 8px,
+        Bottom = 16px,
+        Left = 20px.
+      </p>
+
+      <p>
+        The difference between margin and padding is that margin adds space
+        outside an element, while padding adds space inside it.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">position: fixed;</p>
+      <p class="css_code">top: 50%;</p>
+      <p class="css_code">left: 60%;</p>
+
+      <p>
+        The position property with the value fixed works together with top and
+        left to position an element on the screen.
+      </p>
+
+      <p>
+        Remember that top moves the element down from the top edge of the screen.
+      </p>
+
+      <p>
+        For example, <code>top: 50%;</code> moves the element halfway down the screen.
+      </p>
+
+      <p>
+        <code>left: 60%;</code> moves the element 60% from the left side of the screen.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">display: flex;</p>
+      <p class="css_code">justify-content: center;</p>
+      <p class="css_code">align-items: center;</p>
+
+      <p>
+        We will learn more about Flexbox later. It's a powerful way of arranging
+        and positioning elements.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">object-fit: fill;</p>
+      <p class="css_code">object-fit: cover;</p>
+      <p class="css_code">object-fit: contain;</p>
+
+      <p>
+        This controls how an image or video is resized inside its container.
+      </p>
+
+      <p>
+        Depending on the value, the image can stretch, fit perfectly, or be cropped.
+      </p>
+    </div>
+
+    <div class="inner_Section">
+      <p class="css_code">@media only screen and (orientation: landscape)</p>
+      <p class="css_code">@media only screen and (orientation: portrait)</p>
+
+      <p>
+        Media queries allow your website to react to different screen sizes
+        and orientations.
+      </p>
+
+      <p>
+        Portrait is usually associated with mobile devices because the height
+        is greater than the width.
+      </p>
+
+      <p>
+        Landscape is usually associated with desktop screens because the width
+        is greater than the height.
+      </p>
+    </div>
+
+  </div>
+
+</div>
+
+
+
+        <!-- ================== MINI EDITORS ================== -->
+
+        <!-- ========== MINI EDITOR #1 — VIDEO ==========
+             AUTO_MAP: ["recording1.json", 1, "video1.mp4", "video"]
+        -->
+        <div class="body_container_cover_section_cover menu_editor">
+          <h2>Mini Editor A (Video)</h2>
+
+          <div class="editor_controls">
+            <button class="btnLoad">📂 Load JSON…</button>
+            <input class="fileJson" type="file" accept=".json,application/json" style="display:none">
+            <button class="btnToggle">▶ Play</button>
+            <button class="btnReset">↺ Reset</button>
+
+            <div class="seekWrap" style="display:flex;gap:8px;align-items:center;margin-left:auto;min-width:40%">
+              <input class="seek" type="range" min="0" max="0" step="50" value="0" style="flex:1">
+              <span class="timeLabel" style="font-size:.9rem;opacity:.85;white-space:nowrap">00:00 / 00:00</span>
+            </div>
+          </div>
+
+          <div style="font-size:.9rem; color:#bbb; margin-bottom:6px;">src · play/pause · seek · edit · output</div>
+
+          <!-- Video slot used when mediaType === "video" -->
+          <video class="editorVideo" playsinline controls style="width:100%;max-height:220px;background:#000"></video>
+
+          <!-- Readonly while playing -->
+          <div class="roWrap">
+            <label>Read-only (timeline)</label>
+            <textarea class="txtReadonly" readonly></textarea>
+          </div>
+
+          <!-- Editable while paused -->
+          <div class="editWrap">
+            <label>Editable (your scratch)</label>
+            <textarea class="txtEdit editable"></textarea>
+          </div>
+
+          <div class="editor_output">
+            <iframe class="outputFrame" sandbox="allow-scripts"></iframe>
+          </div>
+
+          <div class="status" style="margin-top:6px;font-size:.9rem;opacity:.85">Waiting for recording…</div>
+        </div>
+
+        <!-- ========== MINI EDITOR #2 — AUDIO ==========
+             AUTO_MAP: ["recording2.json", 2, "audio.mp3", "audio"]
+             (No <audio> tag needed; app.js will create .editorAudio)
+        -->
+
+
+         
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts (defer so DOM is ready) -->
+  <script src="app.js" defer></script>
+  <script src="../menu.js" defer></script>
+</body>
+</html>

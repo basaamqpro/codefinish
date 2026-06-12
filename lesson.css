@@ -21,8 +21,16 @@
     justify-content: center;
     align-items: center;
     margin: 22px 0px;
+    flex-direction: column;
 }
 
 .lessonSection {
     width: 86%;
+}
+
+p.css_code {
+    background-color: purple;
+    /* width: max-content; */
+    padding: 2px 8px;
+    border-radius: 3px;
 }
